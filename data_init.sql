@@ -5,7 +5,6 @@ use student_db;
 --   YY: Year of admission (e.g., 23 for 2023)
 --   DDD: Department code (3 digits)
 --   XXX: Unique student ID within department
--- dept_id: 3-digit department code (e.g., '001' for Computer Science)
 -- sub_batch: Department code + 2-digit batch number (e.g., 'CS01' for Computer Science 1st batch)
 -- programme: Full program name (e.g., 'B.Tech Computer Science and Engineering')
 CREATE TABLE Student (
@@ -15,10 +14,10 @@ CREATE TABLE Student (
     address VARCHAR(255),
     email VARCHAR(100),
     mobile VARCHAR(15),
-    dept_id CHAR(3),
     sub_batch VARCHAR(4),
     programme VARCHAR(100),
-    CHECK (enrollment_number >= 10000000 AND enrollment_number <= 99999999)
+    CHECK (enrollment_number >= 10000000 AND enrollment_number <= 99999999),
+    FOREIGN KEY (programme) REFERENCES Programme(programme)
 );
 
 -- Create the DEPARTMENT table
@@ -62,12 +61,15 @@ CREATE TABLE Enrolled (
 --   YYYY: Year of joining
 --   XXX: Unique instructor number
 -- office: Room number only (e.g., '101')
+-- dept_id: 3-digit department code (e.g., '001' for Computer Science)
 CREATE TABLE Instructor (
     instructor_id VARCHAR(10) PRIMARY KEY,
     name VARCHAR(100),
     email VARCHAR(100),
     mobile VARCHAR(15),
-    office VARCHAR(10)
+    office VARCHAR(10),
+    dept_id CHAR(3),
+    FOREIGN KEY (dept_id) REFERENCES Department(dept_id)
 );
 
 -- Create the ATTENDANCE table
@@ -99,6 +101,15 @@ CREATE TABLE Taught_By (
     PRIMARY KEY (Instructor_ID, Course_ID),
     FOREIGN KEY (Instructor_ID) REFERENCES Instructor(Instructor_ID),
     FOREIGN KEY (Course_ID) REFERENCES Courses(Course_ID)
+);
+
+-- Create the PROGRAMME table
+-- programme: Full program name (e.g., 'B.Tech Computer Science and Engineering')
+-- dept_id: 3-digit department code (e.g., '001' for Computer Science)
+CREATE TABLE Programme (
+    programme VARCHAR(100) PRIMARY KEY,
+    dept_id CHAR(3),
+    FOREIGN KEY (dept_id) REFERENCES Department(dept_id)
 );
 
 -- Add status column to Enrolled table with CHECK constraint
