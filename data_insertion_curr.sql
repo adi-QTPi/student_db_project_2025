@@ -81,9 +81,9 @@ INSERT INTO Student (enrollment_number, name, dob, address, email, mobile, dept_
 (23010005, 'Quinn Davis', '2005-06-27', '654 Solution Dr, Town', 'quinn.d@university.edu', '9876543339', '010', 'CH01', 'B.Tech Chemical Engineering');
 
 -- Clear existing enrollment data to avoid conflicts
-DELETE FROM Enrolled;
-DELETE FROM Attendance;
-DELETE FROM Grade;
+-- DELETE FROM Enrolled;
+-- DELETE FROM Attendance;
+-- DELETE FROM Grade;
 
 -- Insert data into Enrolled table
 -- Each student is enrolled in 4-5 courses
