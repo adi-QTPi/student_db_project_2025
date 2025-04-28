@@ -1,293 +1,339 @@
 use student_db;
 
--- Add more data to Department table
--- Adding 20 new departments
-INSERT INTO Department (dept_id, hod, location, dept_name) VALUES
-('011', 'INS2023011', 'Science Building, Floor 1', 'Physics'),
-('012', 'INS2023012', 'Science Building, Floor 2', 'Chemistry'),
-('013', 'INS2023013', 'Science Building, Floor 3', 'Biology'),
-('014', 'INS2023014', 'Science Building, Floor 4', 'Environmental Science'),
-('015', 'INS2023015', 'Science Building, Floor 5', 'Biotechnology'),
-('016', 'INS2023016', 'Arts Building, Floor 1', 'English'),
-('017', 'INS2023017', 'Arts Building, Floor 2', 'History'),
-('018', 'INS2023018', 'Arts Building, Floor 3', 'Philosophy'),
-('019', 'INS2023019', 'Arts Building, Floor 4', 'Economics'),
-('020', 'INS2023020', 'Arts Building, Floor 5', 'Political Science'),
-('021', 'INS2023021', 'Tech Building, Floor 1', 'Robotics'),
-('022', 'INS2023022', 'Tech Building, Floor 2', 'Nanotechnology'),
-('023', 'INS2023023', 'Tech Building, Floor 3', 'Aerospace Engineering'),
-('024', 'INS2023024', 'Tech Building, Floor 4', 'Biomedical Engineering'),
-('025', 'INS2023025', 'Tech Building, Floor 5', 'Industrial Engineering'),
-('026', 'INS2023026', 'Business Building, Floor 1', 'Business Administration'),
-('027', 'INS2023027', 'Business Building, Floor 2', 'Accounting'),
-('028', 'INS2023028', 'Business Building, Floor 3', 'Marketing'),
-('029', 'INS2023029', 'Business Building, Floor 4', 'Finance'),
-('030', 'INS2023030', 'Business Building, Floor 5', 'Human Resources');
-
--- Add more data to Instructor table
--- Adding 20 new instructors
-INSERT INTO Instructor (instructor_id, name, email, mobile, office) VALUES
-('INS2023011', 'Rachel Thompson', 'rachel.thompson@university.edu', '9876543220', '102'),
-('INS2023012', 'Thomas Anderson', 'thomas.anderson@university.edu', '9876543221', '202'),
-('INS2023013', 'Jennifer Wilson', 'jennifer.wilson@university.edu', '9876543222', '302'),
-('INS2023014', 'Daniel Martinez', 'daniel.martinez@university.edu', '9876543223', '402'),
-('INS2023015', 'Olivia Taylor', 'olivia.taylor@university.edu', '9876543224', '503'),
-('INS2023016', 'William Jackson', 'william.jackson@university.edu', '9876543225', '103'),
-('INS2023017', 'Sophia White', 'sophia.white@university.edu', '9876543226', '203'),
-('INS2023018', 'Ethan Harris', 'ethan.harris@university.edu', '9876543227', '303'),
-('INS2023019', 'Emma Clark', 'emma.clark@university.edu', '9876543228', '403'),
-('INS2023020', 'Noah Lewis', 'noah.lewis@university.edu', '9876543229', '504'),
-('INS2023021', 'Ava Walker', 'ava.walker@university.edu', '9876543230', '104'),
-('INS2023022', 'Benjamin Young', 'benjamin.young@university.edu', '9876543231', '204'),
-('INS2023023', 'Mia Allen', 'mia.allen@university.edu', '9876543232', '304'),
-('INS2023024', 'Liam Scott', 'liam.scott@university.edu', '9876543233', '404'),
-('INS2023025', 'Charlotte Green', 'charlotte.green@university.edu', '9876543234', '505'),
-('INS2023026', 'Lucas King', 'lucas.king@university.edu', '9876543235', '105'),
-('INS2023027', 'Amelia Wright', 'amelia.wright@university.edu', '9876543236', '205'),
-('INS2023028', 'Mason Turner', 'mason.turner@university.edu', '9876543237', '305'),
-('INS2023029', 'Harper Hill', 'harper.hill@university.edu', '9876543238', '405'),
-('INS2023030', 'Evelyn Adams', 'evelyn.adams@university.edu', '9876543239', '506');
-
--- Add more data to Courses table
--- Adding 20 new courses
-INSERT INTO Courses (course_id, course_name, credits, total_classes) VALUES
--- Physics Courses
-('PHY101', 'Classical Mechanics', 4, 40),
-('PHY102', 'Electromagnetism', 4, 40),
-('PHY201', 'Thermodynamics', 3, 30),
-
--- Chemistry Courses
-('CHM101', 'General Chemistry', 4, 40),
-('CHM102', 'Organic Chemistry', 4, 40),
-('CHM201', 'Physical Chemistry', 3, 30),
-
--- Biology Courses
-('BIO101', 'Cell Biology', 4, 40),
-('BIO102', 'Genetics', 4, 40),
-('BIO201', 'Microbiology', 3, 30),
-
--- English Courses
-('ENG101', 'English Literature', 3, 30),
-('ENG102', 'Creative Writing', 3, 30),
-('ENG201', 'Technical Writing', 3, 30),
-
--- Business Courses
-('BUS101', 'Principles of Management', 3, 30),
-('BUS102', 'Financial Accounting', 4, 40),
-('BUS201', 'Marketing Management', 3, 30),
-
--- Robotics Courses
-('ROB101', 'Introduction to Robotics', 4, 40),
-('ROB201', 'Robot Kinematics', 4, 40),
-('ROB202', 'Autonomous Systems', 4, 40),
-
--- Additional CS Courses
-('CS301', 'Artificial Intelligence', 4, 40),
-('CS302', 'Machine Learning', 4, 40);
-
--- Add more data to Student table
--- Adding 20 new students in various departments
+-- Add 30 more students to the Student table
+-- enrollment_number: 8-digit format (YYDDDXXX)
+--   YY: Year of admission (e.g., 23 for 2023)
+--   DDD: Department code (3 digits)
+--   XXX: Unique student ID within department
 INSERT INTO Student (enrollment_number, name, dob, address, email, mobile, dept_id, sub_batch, programme) VALUES
--- Physics Students
-(23011001, 'Rajesh Kumar', '2005-03-12', '34 Science Lane, City', 'rajesh.k@university.edu', '9876543300', '011', 'PH01', 'B.Sc Physics'),
-(23011002, 'Priya Sharma', '2005-04-15', '45 Newton Road, City', 'priya.s@university.edu', '9876543301', '011', 'PH01', 'B.Sc Physics'),
+-- Computer Science Students (5 more)
+(23001005, 'Vikash Sharma', '2005-11-12', '234 Tech Park, City', 'vikash.s@university.edu', '9876543320', '001', 'CS01', 'B.Tech Computer Science and Engineering'),
+(23001006, 'Ananya Patel', '2005-12-05', '345 Code Street, City', 'ananya.p@university.edu', '9876543321', '001', 'CS01', 'B.Tech Computer Science and Engineering'),
+(23001007, 'Rahul Joshi', '2006-01-15', '456 Algorithm Avenue, City', 'rahul.j@university.edu', '9876543322', '001', 'CS02', 'B.Tech Computer Science and Engineering'),
+(23001008, 'Meera Gupta', '2006-02-20', '567 Binary Road, City', 'meera.g@university.edu', '9876543323', '001', 'CS02', 'B.Tech Computer Science and Engineering'),
+(23001009, 'Arjun Kohli', '2006-03-10', '678 Data Lane, City', 'arjun.k@university.edu', '9876543324', '001', 'CS02', 'B.Tech Computer Science and Engineering'),
 
--- Chemistry Students
-(23012001, 'Sameer Patel', '2005-05-20', '56 Mendeleev St, City', 'sameer.p@university.edu', '9876543302', '012', 'CH01', 'B.Sc Chemistry'),
-(23012002, 'Neha Gupta', '2005-06-25', '67 Element Road, City', 'neha.g@university.edu', '9876543303', '012', 'CH01', 'B.Sc Chemistry'),
+-- Electrical Engineering Students (5 more)
+(23002003, 'Nisha Reddy', '2005-04-18', '789 Circuit Street, City', 'nisha.r@university.edu', '9876543325', '002', 'EE01', 'B.Tech Electrical Engineering'),
+(23002004, 'Vishal Kumar', '2005-05-25', '890 Power Road, City', 'vishal.k@university.edu', '9876543326', '002', 'EE01', 'B.Tech Electrical Engineering'),
+(23002005, 'Pooja Singh', '2005-06-30', '901 Voltage Lane, City', 'pooja.s@university.edu', '9876543327', '002', 'EE02', 'B.Tech Electrical Engineering'),
+(23002006, 'Karan Malhotra', '2005-07-14', '112 Current Avenue, City', 'karan.m@university.edu', '9876543328', '002', 'EE02', 'B.Tech Electrical Engineering'),
+(23002007, 'Ritu Verma', '2005-08-22', '223 Electron Road, City', 'ritu.v@university.edu', '9876543329', '002', 'EE02', 'B.Tech Electrical Engineering'),
 
--- Biology Students
-(23013001, 'Amit Singh', '2005-07-30', '78 Darwin Lane, City', 'amit.s@university.edu', '9876543304', '013', 'BI01', 'B.Sc Biology'),
-(23013002, 'Kavita Rao', '2005-08-05', '89 Cell Street, City', 'kavita.r@university.edu', '9876543305', '013', 'BI01', 'B.Sc Biology'),
+-- Mechanical Engineering Students (5 more)
+(23003002, 'Suresh Yadav', '2005-09-05', '334 Gear Street, City', 'suresh.y@university.edu', '9876543330', '003', 'ME01', 'B.Tech Mechanical Engineering'),
+(23003003, 'Tanvi Sharma', '2005-10-14', '445 Engine Road, City', 'tanvi.s@university.edu', '9876543331', '003', 'ME01', 'B.Tech Mechanical Engineering'),
+(23003004, 'Mohit Agarwal', '2005-11-27', '556 Dynamics Lane, City', 'mohit.a@university.edu', '9876543332', '003', 'ME02', 'B.Tech Mechanical Engineering'),
+(23003005, 'Sanya Kapoor', '2005-12-10', '667 Kinematics Avenue, City', 'sanya.k@university.edu', '9876543333', '003', 'ME02', 'B.Tech Mechanical Engineering'),
+(23003006, 'Rohit Mehra', '2006-01-19', '778 Thermal Road, City', 'rohit.m@university.edu', '9876543334', '003', 'ME02', 'B.Tech Mechanical Engineering'),
 
--- Computer Science Students
-(23001003, 'Ravi Teja', '2005-09-10', '90 Algorithm Road, City', 'ravi.t@university.edu', '9876543306', '001', 'CS01', 'B.Tech Computer Science and Engineering'),
-(23001004, 'Sunita Verma', '2005-10-15', '12 Coding Lane, City', 'sunita.v@university.edu', '9876543307', '001', 'CS01', 'B.Tech Computer Science and Engineering'),
+-- Mathematics Students (5 more)
+(24117010, 'Ishika Bhatia', '2006-02-22', 'IIT Roorkee', 'ishika.b@university.edu', '9876543335', '005', 'MA01', 'BSMS Mathematics and Computing'),
+(24117011, 'Praveen Chaudhary', '2006-03-08', 'IIT Roorkee', 'praveen.c@university.edu', '9876543336', '005', 'MA01', 'BSMS Mathematics and Computing'),
+(24117012, 'Shivani Rathore', '2006-04-15', 'IIT Roorkee', 'shivani.r@university.edu', '9876543337', '005', 'MA02', 'BSMS Mathematics and Computing'),
+(24117013, 'Gaurav Malik', '2006-05-23', 'IIT Roorkee', 'gaurav.m@university.edu', '9876543338', '005', 'MA02', 'BSMS Mathematics and Computing'),
+(24117014, 'Isha Nair', '2006-06-17', 'IIT Roorkee', 'isha.n@university.edu', '9876543339', '005', 'MA02', 'BSMS Mathematics and Computing'),
+
+-- Data Science and AI Students (5 more)
+(23006004, 'Vijay Kulkarni', '2006-07-21', '889 Analytics Road, City', 'vijay.k@university.edu', '9876543340', '006', 'DS01', 'B.Tech Data Science and AI'),
+(23006005, 'Shreya Menon', '2006-08-11', '990 Machine Lane, City', 'shreya.m@university.edu', '9876543341', '006', 'DS01', 'B.Tech Data Science and AI'),
+(23006006, 'Nitin Saxena', '2006-09-05', '101 AI Avenue, City', 'nitin.s@university.edu', '9876543342', '006', 'DS02', 'B.Tech Data Science and AI'),
+(23006007, 'Aarti Chopra', '2006-10-14', '212 Deep Learning Road, City', 'aarti.c@university.edu', '9876543343', '006', 'DS02', 'B.Tech Data Science and AI'),
+(23006008, 'Manish Goyal', '2006-11-22', '323 Neural Network Street, City', 'manish.g@university.edu', '9876543344', '006', 'DS02', 'B.Tech Data Science and AI'),
+
+-- Electronics and Communication Students (5 more)
+(23007004, 'Preeti Rawat', '2006-12-13', '434 Signal Road, City', 'preeti.r@university.edu', '9876543345', '007', 'EC01', 'B.Tech Electronics and Communication'),
+(23007005, 'Aman Srivastava', '2007-01-09', '545 Communication Lane, City', 'aman.s@university.edu', '9876543346', '007', 'EC01', 'B.Tech Electronics and Communication'),
+(23007006, 'Sneha Rao', '2007-02-18', '656 Network Avenue, City', 'sneha.r@university.edu', '9876543347', '007', 'EC02', 'B.Tech Electronics and Communication'),
+(23007007, 'Varun Chauhan', '2007-03-27', '767 Microwave Road, City', 'varun.c@university.edu', '9876543348', '007', 'EC02', 'B.Tech Electronics and Communication'),
+(23007008, 'Juhi Sharma', '2007-04-15', '878 Circuit Lane, City', 'juhi.s@university.edu', '9876543349', '007', 'EC02', 'B.Tech Electronics and Communication');
+
+-- Insert data into Enrolled table for the new students
+INSERT INTO Enrolled (enrollment_number, course_id, enrollment_date, status) VALUES
+-- CS Students
+(23001005, 'CS101', 'Autumn 2023', 'passed'),
+(23001005, 'CS102', 'Autumn 2023', 'passed'),
+(23001005, 'CS201', 'Spring 2024', 'ongoing'),
+(23001005, 'HSS101', 'Autumn 2023', 'passed'),
+(23001006, 'CS101', 'Autumn 2023', 'passed'),
+(23001006, 'CS102', 'Autumn 2023', 'passed'),
+(23001006, 'CS201', 'Spring 2024', 'ongoing'),
+(23001006, 'HSS102', 'Autumn 2023', 'passed'),
+(23001007, 'CS101', 'Autumn 2023', 'passed'),
+(23001007, 'CS102', 'Autumn 2023', 'passed'),
+(23001007, 'CS202', 'Spring 2024', 'ongoing'),
+(23001007, 'HSS101', 'Autumn 2023', 'passed'),
+(23001008, 'CS101', 'Autumn 2023', 'passed'),
+(23001008, 'CS102', 'Autumn 2023', 'passed'),
+(23001008, 'CS202', 'Spring 2024', 'ongoing'),
+(23001008, 'HSS102', 'Autumn 2023', 'passed'),
+(23001009, 'CS101', 'Autumn 2023', 'repeat'),
+(23001009, 'CS102', 'Autumn 2023', 'passed'),
+(23001009, 'CS203', 'Spring 2024', 'ongoing'),
+(23001009, 'HSS101', 'Autumn 2023', 'passed'),
+
+-- EE Students
+(23002003, 'EE101', 'Autumn 2023', 'passed'),
+(23002003, 'EE201', 'Spring 2024', 'ongoing'),
+(23002003, 'HSS101', 'Autumn 2023', 'passed'),
+(23002004, 'EE101', 'Autumn 2023', 'passed'),
+(23002004, 'EE201', 'Spring 2024', 'ongoing'),
+(23002004, 'HSS102', 'Autumn 2023', 'passed'),
+(23002005, 'EE101', 'Autumn 2023', 'passed'),
+(23002005, 'EE202', 'Spring 2024', 'ongoing'),
+(23002005, 'HSS101', 'Autumn 2023', 'passed'),
+(23002006, 'EE101', 'Autumn 2023', 'passed'),
+(23002006, 'EE202', 'Spring 2024', 'ongoing'),
+(23002006, 'HSS102', 'Autumn 2023', 'passed'),
+(23002007, 'EE101', 'Autumn 2023', 'repeat'),
+(23002007, 'EE203', 'Spring 2024', 'ongoing'),
+(23002007, 'HSS101', 'Autumn 2023', 'passed'),
+
+-- ME Students
+(23003002, 'ME101', 'Autumn 2023', 'passed'),
+(23003002, 'ME201', 'Spring 2024', 'ongoing'),
+(23003002, 'HSS101', 'Autumn 2023', 'passed'),
+(23003003, 'ME101', 'Autumn 2023', 'passed'),
+(23003003, 'ME201', 'Spring 2024', 'ongoing'),
+(23003003, 'HSS102', 'Autumn 2023', 'passed'),
+(23003004, 'ME101', 'Autumn 2023', 'passed'),
+(23003004, 'ME202', 'Spring 2024', 'ongoing'),
+(23003004, 'HSS101', 'Autumn 2023', 'passed'),
+(23003005, 'ME101', 'Autumn 2023', 'passed'),
+(23003005, 'ME202', 'Spring 2024', 'ongoing'),
+(23003005, 'HSS102', 'Autumn 2023', 'passed'),
+(23003006, 'ME101', 'Autumn 2023', 'repeat'),
+(23003006, 'ME203', 'Spring 2024', 'ongoing'),
+(23003006, 'HSS101', 'Autumn 2023', 'passed'),
+
+-- Mathematics Students
+(24117010, 'MAC104', 'Spring 2024', 'ongoing'),
+(24117010, 'MAC102', 'Spring 2024', 'ongoing'),
+(24117010, 'MAC106', 'Spring 2024', 'ongoing'),
+(24117010, 'HSS101', 'Spring 2024', 'ongoing'),
+(24117011, 'MAC104', 'Spring 2024', 'ongoing'),
+(24117011, 'MAC102', 'Spring 2024', 'ongoing'),
+(24117011, 'MAC106', 'Spring 2024', 'ongoing'),
+(24117011, 'HSS102', 'Spring 2024', 'ongoing'),
+(24117012, 'MAC104', 'Spring 2024', 'ongoing'),
+(24117012, 'MAC102', 'Spring 2024', 'ongoing'),
+(24117012, 'MAC201', 'Spring 2024', 'ongoing'),
+(24117012, 'HSS101', 'Spring 2024', 'ongoing'),
+(24117013, 'MAC104', 'Spring 2024', 'ongoing'),
+(24117013, 'MAC102', 'Spring 2024', 'ongoing'),
+(24117013, 'MAC201', 'Spring 2024', 'ongoing'),
+(24117013, 'HSS102', 'Spring 2024', 'ongoing'),
+(24117014, 'MAC104', 'Spring 2024', 'ongoing'),
+(24117014, 'MAC102', 'Spring 2024', 'ongoing'),
+(24117014, 'MAC202', 'Spring 2024', 'ongoing'),
+(24117014, 'HSS101', 'Spring 2024', 'ongoing'),
 
 -- Data Science Students
-(23006002, 'Mohan Reddy', '2005-11-20', '23 Data Street, City', 'mohan.r@university.edu', '9876543308', '006', 'DS01', 'B.Tech Data Science and AI'),
-(23006003, 'Anjali Kapoor', '2005-12-25', '34 Analytics Road, City', 'anjali.k@university.edu', '9876543309', '006', 'DS01', 'B.Tech Data Science and AI'),
+(23006004, 'DSAI101', 'Autumn 2023', 'passed'),
+(23006004, 'DSAI102', 'Spring 2024', 'ongoing'),
+(23006004, 'HSS101', 'Autumn 2023', 'passed'),
+(23006005, 'DSAI101', 'Autumn 2023', 'passed'),
+(23006005, 'DSAI102', 'Spring 2024', 'ongoing'),
+(23006005, 'HSS102', 'Autumn 2023', 'passed'),
+(23006006, 'DSAI101', 'Autumn 2023', 'passed'),
+(23006006, 'DSAI201', 'Spring 2024', 'ongoing'),
+(23006006, 'HSS101', 'Autumn 2023', 'passed'),
+(23006007, 'DSAI101', 'Autumn 2023', 'passed'),
+(23006007, 'DSAI201', 'Spring 2024', 'ongoing'),
+(23006007, 'HSS102', 'Autumn 2023', 'passed'),
+(23006008, 'DSAI101', 'Autumn 2023', 'repeat'),
+(23006008, 'DSAI202', 'Spring 2024', 'ongoing'),
+(23006008, 'HSS101', 'Autumn 2023', 'passed'),
 
--- Robotics Students
-(23021001, 'Vikram Malhotra', '2006-01-01', '45 Robot Lane, City', 'vikram.m@university.edu', '9876543310', '021', 'RB01', 'B.Tech Robotics'),
-(23021002, 'Deepika Joshi', '2006-02-05', '56 Automation St, City', 'deepika.j@university.edu', '9876543311', '021', 'RB01', 'B.Tech Robotics'),
+-- ECE Students
+(23007004, 'ECE101', 'Autumn 2023', 'passed'),
+(23007004, 'ECE201', 'Spring 2024', 'ongoing'),
+(23007004, 'HSS101', 'Autumn 2023', 'passed'),
+(23007005, 'ECE101', 'Autumn 2023', 'passed'),
+(23007005, 'ECE201', 'Spring 2024', 'ongoing'),
+(23007005, 'HSS102', 'Autumn 2023', 'passed'),
+(23007006, 'ECE101', 'Autumn 2023', 'passed'),
+(23007006, 'ECE202', 'Spring 2024', 'ongoing'),
+(23007006, 'HSS101', 'Autumn 2023', 'passed'),
+(23007007, 'ECE101', 'Autumn 2023', 'passed'),
+(23007007, 'ECE202', 'Spring 2024', 'ongoing'),
+(23007007, 'HSS102', 'Autumn 2023', 'passed'),
+(23007008, 'ECE101', 'Autumn 2023', 'repeat'),
+(23007008, 'ECE201', 'Spring 2024', 'ongoing'),
+(23007008, 'HSS101', 'Autumn 2023', 'passed');
 
--- Business Administration Students
-(23026001, 'Rahul Mehta', '2006-03-10', '67 Business Blvd, City', 'rahul.m@university.edu', '9876543312', '026', 'BA01', 'BBA Business Administration'),
-(23026002, 'Sneha Mishra', '2006-04-15', '78 Commerce Lane, City', 'sneha.m@university.edu', '9876543313', '026', 'BA01', 'BBA Business Administration'),
-
--- English Literature Students
-(23016001, 'Aarav Bhatia', '2006-05-20', '89 Literature Road, City', 'aarav.b@university.edu', '9876543314', '016', 'EN01', 'BA English Literature'),
-(23016002, 'Ishita Choudhary', '2006-06-25', '90 Poetry Lane, City', 'ishita.c@university.edu', '9876543315', '016', 'EN01', 'BA English Literature'),
-
--- Additional Mathematics Students
-(24117008, 'Karan Aggarwal', '2006-07-30', 'IIT Roorkee', 'karan.a@university.edu', '9876543316', '005', 'MA01', 'BSMS Mathematics and Computing'),
-(24117009, 'Divya Mathur', '2006-08-05', 'IIT Roorkee', 'divya.m@university.edu', '9876543317', '005', 'MA01', 'BSMS Mathematics and Computing'),
-
--- Additional Electronics Students
-(23007002, 'Nikhil Sood', '2006-09-10', '12 Circuit Road, City', 'nikhil.s@university.edu', '9876543318', '007', 'EC01', 'B.Tech Electronics and Communication'),
-(23007003, 'Tanvi Khanna', '2006-10-15', '23 Signal Lane, City', 'tanvi.k@university.edu', '9876543319', '007', 'EC01', 'B.Tech Electronics and Communication');
-
--- Add more data to Enrolled table
--- Adding new enrollment records for students
-INSERT INTO Enrolled (enrollment_number, course_id, enrollment_date, status) VALUES
--- Physics Students
-(23011001, 'PHY101', 'Autumn 2023', 'ongoing'),
-(23011001, 'PHY102', 'Autumn 2023', 'ongoing'),
-(23011001, 'HSS101', 'Autumn 2023', 'ongoing'),
-(23011002, 'PHY101', 'Autumn 2023', 'ongoing'),
-(23011002, 'PHY102', 'Autumn 2023', 'ongoing'),
-(23011002, 'HSS102', 'Autumn 2023', 'passed'),
-
--- Chemistry Students
-(23012001, 'CHM101', 'Autumn 2023', 'ongoing'),
-(23012001, 'CHM102', 'Autumn 2023', 'ongoing'),
-(23012001, 'HSS101', 'Autumn 2023', 'passed'),
-(23012002, 'CHM101', 'Autumn 2023', 'ongoing'),
-(23012002, 'CHM102', 'Autumn 2023', 'drop'),
-(23012002, 'HSS102', 'Autumn 2023', 'ongoing'),
-
--- Biology Students
-(23013001, 'BIO101', 'Autumn 2023', 'ongoing'),
-(23013001, 'BIO102', 'Autumn 2023', 'ongoing'),
-(23013001, 'HSS101', 'Autumn 2023', 'ongoing'),
-(23013002, 'BIO101', 'Autumn 2023', 'ongoing'),
-(23013002, 'BIO102', 'Autumn 2023', 'repeat'),
-(23013002, 'HSS102', 'Autumn 2023', 'ongoing'),
-
--- New CS Students
-(23001003, 'CS101', 'Autumn 2023', 'ongoing'),
-(23001003, 'CS102', 'Autumn 2023', 'ongoing'),
-(23001003, 'CS201', 'Spring 2024', 'ongoing'),
-(23001004, 'CS101', 'Autumn 2023', 'passed'),
-(23001004, 'CS102', 'Autumn 2023', 'passed'),
-(23001004, 'CS201', 'Spring 2024', 'ongoing'),
-
--- Mathematics Students
-(24117008, 'MAC104', 'Spring 2024', 'ongoing'),
-(24117008, 'MAC102', 'Spring 2024', 'ongoing'),
-(24117008, 'MAC106', 'Spring 2024', 'ongoing'),
-(24117009, 'MAC104', 'Spring 2024', 'ongoing'),
-(24117009, 'MAC102', 'Spring 2024', 'ongoing'),
-(24117009, 'MAC106', 'Spring 2024', 'ongoing');
-
--- Add more data to Attendance table
--- Adding new attendance records
+-- Insert data into Attendance table for the new students
 INSERT INTO Attendance (enrollment_number, course_id, date_time) VALUES
--- Physics Students
-(23011001, 'PHY101', '2023-08-01 10:00:00'),
-(23011001, 'PHY101', '2023-08-03 10:00:00'),
-(23011001, 'PHY101', '2023-08-08 10:00:00'),
-(23011001, 'PHY102', '2023-08-02 14:00:00'),
-(23011001, 'PHY102', '2023-08-04 14:00:00'),
-(23011002, 'PHY101', '2023-08-01 10:00:00'),
-(23011002, 'PHY101', '2023-08-03 10:00:00'),
-(23011002, 'PHY102', '2023-08-02 14:00:00'),
-(23011002, 'PHY102', '2023-08-04 14:00:00'),
-(23011002, 'PHY102', '2023-08-09 14:00:00'),
+-- CS Students
+(23001005, 'CS101', '2023-08-01 09:00:00'),
+(23001005, 'CS101', '2023-08-03 09:00:00'),
+(23001005, 'CS101', '2023-08-08 09:00:00'),
+(23001005, 'CS102', '2023-08-02 11:00:00'),
+(23001005, 'CS102', '2023-08-04 11:00:00'),
+(23001005, 'CS201', '2024-01-15 09:00:00'),
+(23001005, 'CS201', '2024-01-17 09:00:00'),
+(23001006, 'CS101', '2023-08-01 09:00:00'),
+(23001006, 'CS102', '2023-08-02 11:00:00'),
+(23001006, 'CS201', '2024-01-15 09:00:00'),
+(23001006, 'CS201', '2024-01-17 09:00:00'),
+(23001007, 'CS101', '2023-08-01 09:00:00'),
+(23001007, 'CS102', '2023-08-02 11:00:00'),
+(23001007, 'CS202', '2024-01-16 10:00:00'),
+(23001007, 'CS202', '2024-01-18 10:00:00'),
+(23001008, 'CS101', '2023-08-01 09:00:00'),
+(23001008, 'CS102', '2023-08-02 11:00:00'),
+(23001008, 'CS202', '2024-01-16 10:00:00'),
+(23001008, 'CS202', '2024-01-18 10:00:00'),
+(23001009, 'CS102', '2023-08-02 11:00:00'),
+(23001009, 'CS203', '2024-01-15 14:00:00'),
+(23001009, 'CS203', '2024-01-17 14:00:00'),
 
--- Chemistry Students
-(23012001, 'CHM101', '2023-08-01 13:00:00'),
-(23012001, 'CHM101', '2023-08-03 13:00:00'),
-(23012001, 'CHM102', '2023-08-02 15:00:00'),
-(23012001, 'CHM102', '2023-08-04 15:00:00'),
-(23012002, 'CHM101', '2023-08-01 13:00:00'),
-(23012002, 'CHM101', '2023-08-03 13:00:00'),
+-- EE Students
+(23002003, 'EE101', '2023-08-01 11:00:00'),
+(23002003, 'EE101', '2023-08-03 11:00:00'),
+(23002003, 'EE201', '2024-01-15 10:00:00'),
+(23002003, 'EE201', '2024-01-17 10:00:00'),
+(23002004, 'EE101', '2023-08-01 11:00:00'),
+(23002004, 'EE201', '2024-01-15 10:00:00'),
+(23002004, 'EE201', '2024-01-17 10:00:00'),
+(23002005, 'EE101', '2023-08-01 11:00:00'),
+(23002005, 'EE202', '2024-01-16 13:00:00'),
+(23002005, 'EE202', '2024-01-18 13:00:00'),
+(23002006, 'EE101', '2023-08-01 11:00:00'),
+(23002006, 'EE202', '2024-01-16 13:00:00'),
+(23002006, 'EE202', '2024-01-18 13:00:00'),
+(23002007, 'EE203', '2024-01-15 15:00:00'),
+(23002007, 'EE203', '2024-01-17 15:00:00'),
 
--- Computer Science Students
-(23001003, 'CS101', '2023-08-01 09:00:00'),
-(23001003, 'CS101', '2023-08-03 09:00:00'),
-(23001003, 'CS101', '2023-08-08 09:00:00'),
-(23001003, 'CS102', '2023-08-02 11:00:00'),
-(23001003, 'CS102', '2023-08-04 11:00:00'),
-(23001004, 'CS101', '2023-08-01 09:00:00'),
-(23001004, 'CS101', '2023-08-03 09:00:00'),
-(23001004, 'CS102', '2023-08-02 11:00:00'),
-(23001004, 'CS102', '2023-08-04 11:00:00'),
+-- ME Students
+(23003002, 'ME101', '2023-08-02 13:00:00'),
+(23003002, 'ME101', '2023-08-04 13:00:00'),
+(23003002, 'ME201', '2024-01-15 11:00:00'),
+(23003002, 'ME201', '2024-01-17 11:00:00'),
+(23003003, 'ME101', '2023-08-02 13:00:00'),
+(23003003, 'ME201', '2024-01-15 11:00:00'),
+(23003003, 'ME201', '2024-01-17 11:00:00'),
+(23003004, 'ME101', '2023-08-02 13:00:00'),
+(23003004, 'ME202', '2024-01-16 14:00:00'),
+(23003004, 'ME202', '2024-01-18 14:00:00'),
+(23003005, 'ME101', '2023-08-02 13:00:00'),
+(23003005, 'ME202', '2024-01-16 14:00:00'),
+(23003005, 'ME202', '2024-01-18 14:00:00'),
+(23003006, 'ME203', '2024-01-15 16:00:00'),
+(23003006, 'ME203', '2024-01-17 16:00:00'),
 
 -- Mathematics Students
-(24117008, 'MAC104', '2024-01-15 09:00:00'),
-(24117008, 'MAC104', '2024-01-17 09:00:00'),
-(24117008, 'MAC102', '2024-01-16 11:00:00'),
-(24117008, 'MAC102', '2024-01-18 11:00:00'),
-(24117008, 'MAC106', '2024-01-15 14:00:00'),
-(24117008, 'MAC106', '2024-01-17 14:00:00'),
-(24117009, 'MAC104', '2024-01-15 09:00:00'),
-(24117009, 'MAC104', '2024-01-17 09:00:00'),
-(24117009, 'MAC102', '2024-01-16 11:00:00'),
-(24117009, 'MAC102', '2024-01-18 11:00:00'),
-(24117009, 'MAC106', '2024-01-15 14:00:00'),
-(24117009, 'MAC106', '2024-01-17 14:00:00');
+(24117010, 'MAC104', '2024-01-15 09:00:00'),
+(24117010, 'MAC104', '2024-01-17 09:00:00'),
+(24117010, 'MAC102', '2024-01-16 11:00:00'),
+(24117010, 'MAC102', '2024-01-18 11:00:00'),
+(24117010, 'MAC106', '2024-01-15 14:00:00'),
+(24117010, 'MAC106', '2024-01-17 14:00:00'),
+(24117011, 'MAC104', '2024-01-15 09:00:00'),
+(24117011, 'MAC102', '2024-01-16 11:00:00'),
+(24117011, 'MAC106', '2024-01-15 14:00:00'),
+(24117012, 'MAC104', '2024-01-15 09:00:00'),
+(24117012, 'MAC102', '2024-01-16 11:00:00'),
+(24117012, 'MAC201', '2024-01-15 13:00:00'),
+(24117013, 'MAC104', '2024-01-15 09:00:00'),
+(24117013, 'MAC102', '2024-01-16 11:00:00'),
+(24117013, 'MAC201', '2024-01-15 13:00:00'),
+(24117014, 'MAC104', '2024-01-15 09:00:00'),
+(24117014, 'MAC102', '2024-01-16 11:00:00'),
+(24117014, 'MAC202', '2024-01-16 15:00:00'),
 
--- Add more data to Grade table
--- Adding new grade records
+-- Data Science Students
+(23006004, 'DSAI101', '2023-08-02 10:00:00'),
+(23006004, 'DSAI101', '2023-08-04 10:00:00'),
+(23006004, 'DSAI102', '2024-01-15 13:00:00'),
+(23006004, 'DSAI102', '2024-01-17 13:00:00'),
+(23006005, 'DSAI101', '2023-08-02 10:00:00'),
+(23006005, 'DSAI102', '2024-01-15 13:00:00'),
+(23006005, 'DSAI102', '2024-01-17 13:00:00'),
+(23006006, 'DSAI101', '2023-08-02 10:00:00'),
+(23006006, 'DSAI201', '2024-01-16 11:00:00'),
+(23006006, 'DSAI201', '2024-01-18 11:00:00'),
+(23006007, 'DSAI101', '2023-08-02 10:00:00'),
+(23006007, 'DSAI201', '2024-01-16 11:00:00'),
+(23006007, 'DSAI201', '2024-01-18 11:00:00'),
+(23006008, 'DSAI202', '2024-01-15 15:00:00'),
+(23006008, 'DSAI202', '2024-01-17 15:00:00'),
+
+-- ECE Students
+(23007004, 'ECE101', '2023-08-01 13:00:00'),
+(23007004, 'ECE101', '2023-08-03 13:00:00'),
+(23007004, 'ECE201', '2024-01-15 14:00:00'),
+(23007004, 'ECE201', '2024-01-17 14:00:00'),
+(23007005, 'ECE101', '2023-08-01 13:00:00'),
+(23007005, 'ECE201', '2024-01-15 14:00:00'),
+(23007005, 'ECE201', '2024-01-17 14:00:00'),
+(23007006, 'ECE101', '2023-08-01 13:00:00'),
+(23007006, 'ECE202', '2024-01-16 16:00:00'),
+(23007006, 'ECE202', '2024-01-18 16:00:00'),
+(23007007, 'ECE101', '2023-08-01 13:00:00'),
+(23007007, 'ECE202', '2024-01-16 16:00:00'),
+(23007007, 'ECE202', '2024-01-18 16:00:00'),
+(23007008, 'ECE201', '2024-01-15 14:00:00'),
+(23007008, 'ECE201', '2024-01-17 14:00:00');
+
+-- Insert data into Grade table for the new students
 INSERT INTO Grade (enrollment_number, course_id, grade) VALUES
--- Physics Students
-(23011001, 'PHY101', 8),
-(23011001, 'PHY102', 7),
-(23011001, 'HSS101', 9),
-(23011002, 'PHY101', 9),
-(23011002, 'PHY102', 8),
-(23011002, 'HSS102', 9),
+-- CS Students
+(23001005, 'CS101', 8),
+(23001005, 'CS102', 9),
+(23001005, 'HSS101', 8),
+(23001006, 'CS101', 9),
+(23001006, 'CS102', 8),
+(23001006, 'HSS102', 9),
+(23001007, 'CS101', 7),
+(23001007, 'CS102', 8),
+(23001007, 'HSS101', 9),
+(23001008, 'CS101', 10),
+(23001008, 'CS102', 9),
+(23001008, 'HSS102', 8),
+(23001009, 'CS102', 7),
+(23001009, 'HSS101', 8),
 
--- Chemistry Students
-(23012001, 'CHM101', 7),
-(23012001, 'CHM102', 8),
-(23012001, 'HSS101', 9),
-(23012002, 'CHM101', 8),
-(23012002, 'HSS102', 9),
+-- EE Students
+(23002003, 'EE101', 9),
+(23002003, 'HSS101', 8),
+(23002004, 'EE101', 8),
+(23002004, 'HSS102', 9),
+(23002005, 'EE101', 7),
+(23002005, 'HSS101', 8),
+(23002006, 'EE101', 9),
+(23002006, 'HSS102', 10),
+(23002007, 'HSS101', 8),
 
--- Computer Science Students
-(23001003, 'CS101', 9),
-(23001003, 'CS102', 8),
-(23001004, 'CS101', 10),
-(23001004, 'CS102', 9),
+-- ME Students
+(23003002, 'ME101', 8),
+(23003002, 'HSS101', 9),
+(23003003, 'ME101', 9),
+(23003003, 'HSS102', 8),
+(23003004, 'ME101', 7),
+(23003004, 'HSS101', 8),
+(23003005, 'ME101', 8),
+(23003005, 'HSS102', 9),
+(23003006, 'HSS101', 7),
 
--- Mathematics Students
-(24117008, 'MAC104', 9),
-(24117008, 'MAC102', 8),
-(24117008, 'MAC106', 10),
-(24117009, 'MAC104', 10),
-(24117009, 'MAC102', 9),
-(24117009, 'MAC106', 9);
+-- Data Science Students
+(23006004, 'DSAI101', 9),
+(23006004, 'HSS101', 8),
+(23006005, 'DSAI101', 8),
+(23006005, 'HSS102', 9),
+(23006006, 'DSAI101', 10),
+(23006006, 'HSS101', 9),
+(23006007, 'DSAI101', 7),
+(23006007, 'HSS102', 8),
+(23006008, 'HSS101', 9),
 
--- Add more data to Taught_By table
--- Adding new teaching assignments
-INSERT INTO Taught_By (Instructor_ID, Course_ID) VALUES
--- Physics Courses
-('INS2023011', 'PHY101'),
-('INS2023011', 'PHY102'),
-('INS2023011', 'PHY201'),
-
--- Chemistry Courses
-('INS2023012', 'CHM101'),
-('INS2023012', 'CHM102'),
-('INS2023012', 'CHM201'),
-
--- Biology Courses
-('INS2023013', 'BIO101'),
-('INS2023013', 'BIO102'),
-('INS2023013', 'BIO201'),
-
--- English Courses
-('INS2023016', 'ENG101'),
-('INS2023016', 'ENG102'),
-('INS2023016', 'ENG201'),
-
--- Business Courses
-('INS2023026', 'BUS101'),
-('INS2023026', 'BUS102'),
-('INS2023026', 'BUS201'),
-
--- Robotics Courses
-('INS2023021', 'ROB101'),
-('INS2023021', 'ROB201'),
-('INS2023021', 'ROB202'),
-
--- Additional CS Courses
-('INS2023001', 'CS301'),
-('INS2023001', 'CS302'),
-
--- HSS Courses
-('INS2023017', 'HSS101'),
-('INS2023018', 'HSS102');
+-- ECE Students
+(23007004, 'ECE101', 8),
+(23007004, 'HSS101', 9),
+(23007005, 'ECE101', 9),
+(23007005, 'HSS102', 8),
+(23007006, 'ECE101', 7),
+(23007006, 'HSS101', 9),
+(23007007, 'ECE101', 8),
+(23007007, 'HSS102', 10),
+(23007008, 'HSS101', 8);
