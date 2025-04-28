@@ -100,3 +100,13 @@ CREATE TABLE Taught_By (
     FOREIGN KEY (Instructor_ID) REFERENCES Instructor(Instructor_ID),
     FOREIGN KEY (Course_ID) REFERENCES Courses(Course_ID)
 );
+
+-- Add status column to Enrolled table with CHECK constraint
+ALTER TABLE Enrolled
+ADD COLUMN status VARCHAR(10) NOT NULL DEFAULT 'ongoing',
+ADD CONSTRAINT chk_status CHECK (status IN ('passed', 'repeat', 'drop', 'ongoing'));
+
+-- Update existing records to have 'ongoing' status
+UPDATE Enrolled
+SET status = 'ongoing'
+WHERE status IS NULL; 
