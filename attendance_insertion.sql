@@ -1,4 +1,4 @@
-use student_db2;
+use student_db3;
 
 -- First, verify that all required students exist
 SELECT COUNT(*) INTO @student_count 
