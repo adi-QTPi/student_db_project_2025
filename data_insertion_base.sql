@@ -187,7 +187,7 @@ INSERT INTO Programme (programme, dept_id) VALUES
 ('B.Tech Robotics', '021'),
 ('BBA Business Administration', '026');
 
--- Insert data into Student table (343 students)
+-- Insert data into Student table
 -- enrollment_number: 8-digit format (YYDDDXXX)
 --   YY: Year of admission (e.g., 23 for 2023)
 --   DDD: Department code (3 digits)
@@ -198,31 +198,108 @@ INSERT INTO Student (enrollment_number, name, dob, address, email, mobile, sub_b
 -- Computer Science Students (40)
 (23001001, 'Alice Johnson', '2005-05-15', '123 Main St, City', 'alice.j@university.edu', '9876543215', 'CS01', 'B.Tech Computer Science and Engineering'),
 (23001002, 'Bob Smith', '2005-06-20', '456 Oak St, City', 'bob.s@university.edu', '9876543216', 'CS01', 'B.Tech Computer Science and Engineering'),
+(23001003, 'Ravi Teja', '2005-09-10', '90 Algorithm Road, City', 'ravi.t@university.edu', '9876543306', 'CS01', 'B.Tech Computer Science and Engineering'),
+(23001004, 'Sunita Verma', '2005-10-15', '12 Coding Lane, City', 'sunita.v@university.edu', '9876543307', 'CS01', 'B.Tech Computer Science and Engineering'),
+(23001005, 'Vikash Sharma', '2005-11-12', '234 Tech Park, City', 'vikash.s@university.edu', '9876543320', 'CS01', 'B.Tech Computer Science and Engineering'),
+(23001006, 'Ananya Patel', '2005-12-05', '345 Code Street, City', 'ananya.p@university.edu', '9876543321', 'CS01', 'B.Tech Computer Science and Engineering'),
+(23001007, 'Rahul Joshi', '2006-01-15', '456 Algorithm Avenue, City', 'rahul.j@university.edu', '9876543322', 'CS02', 'B.Tech Computer Science and Engineering'),
+(23001008, 'Meera Gupta', '2006-02-20', '567 Binary Road, City', 'meera.g@university.edu', '9876543323', 'CS02', 'B.Tech Computer Science and Engineering'),
+(23001009, 'Arjun Kohli', '2006-03-10', '678 Data Lane, City', 'arjun.k@university.edu', '9876543324', 'CS02', 'B.Tech Computer Science and Engineering'),
+(23001010, 'Vikram Singh', '2002-11-08', '15 Ashok Nagar, Jaipur', 'vikram.singh@example.com', '9393939393', 'CS01', 'B.Tech Computer Science and Engineering'),
+(23001011, 'Anjali Verma', '2003-01-25', '16 Defence Colony, Mumbai', 'anjali.verma@example.com', '9494949494', 'CS02', 'B.Tech Computer Science and Engineering'),
+(23001012, 'Harsh Verma', '2005-12-01', '23 Sector-1, Noida', 'harsh.verma@example.com', '7171717171', 'CS03', 'B.Tech Computer Science and Engineering'),
+(22001013, 'Radha Iyer', '2004-03-20', '28 Anna Nagar, Chennai', 'radha.iyer@example.com', '7676767676', 'CS03', 'B.Tech Computer Science and Engineering'),
+(20001014, 'Rohan Kapoor', '2002-07-07', '33 Hauz Khas, Delhi', 'rohan.kapoor@example.com', '8181818181', 'CS04', 'B.Tech Computer Science and Engineering'),
 
 -- Electrical Engineering Students (40)
 (23002001, 'Carol White', '2005-07-25', '789 Pine St, City', 'carol.w@university.edu', '9876543217', 'EE01', 'B.Tech Electrical Engineering'),
 (23002002, 'David Brown', '2005-08-30', '321 Elm St, City', 'david.b@university.edu', '9876543218', 'EE01', 'B.Tech Electrical Engineering'),
+(23002003, 'Nisha Reddy', '2005-04-18', '789 Circuit Street, City', 'nisha.r@university.edu', '9876543325', 'EE01', 'B.Tech Electrical Engineering'),
+(23002004, 'Vishal Kumar', '2005-05-25', '890 Power Road, City', 'vishal.k@university.edu', '9876543326', 'EE01', 'B.Tech Electrical Engineering'),
+(23002005, 'Pooja Singh', '2005-06-30', '901 Voltage Lane, City', 'pooja.s@university.edu', '9876543327', 'EE02', 'B.Tech Electrical Engineering'),
+(23002006, 'Karan Malhotra', '2005-07-14', '112 Current Avenue, City', 'karan.m@university.edu', '9876543328', 'EE02', 'B.Tech Electrical Engineering'),
+(23002007, 'Ritu Verma', '2005-08-22', '223 Electron Road, City', 'ritu.v@university.edu', '9876543329', 'EE02', 'B.Tech Electrical Engineering'),
+(22002009, 'Priya Sharma', '2004-09-01', '14 Indira Nagar, Lucknow', 'priya.sharma@example.com', '9292929292', 'EE02', 'B.Tech Electrical Engineering'),
+(23002011, 'Shruti Sharma', '2005-08-15', '24 Sector-18, Noida', 'shruti.sharma@example.com', '7272727272', 'EE03', 'B.Tech Electrical Engineering'),
+(21002012, 'Siddharth Menon', '2003-09-05', '29 Koramangala, Bangalore', 'siddharth.menon@example.com', '7777777777', 'EE03', 'B.Tech Electrical Engineering'),
+(21002014, 'Sakshi Mishra', '2003-05-15', '34 Gomti Nagar, Lucknow', 'sakshi.mishra@example.com', '8282828282', 'EE04', 'B.Tech Electrical Engineering'),
 
 -- Mechanical Engineering Students (40)
 (23003001, 'Eva Davis', '2005-09-10', '654 Maple St, City', 'eva.d@university.edu', '9876543219', 'ME01', 'B.Tech Mechanical Engineering'),
+(23003002, 'Suresh Yadav', '2005-09-05', '334 Gear Street, City', 'suresh.y@university.edu', '9876543330', 'ME01', 'B.Tech Mechanical Engineering'),
+(23003003, 'Tanvi Sharma', '2005-10-14', '445 Engine Road, City', 'tanvi.s@university.edu', '9876543331', 'ME01', 'B.Tech Mechanical Engineering'),
+(23003004, 'Mohit Agarwal', '2005-11-27', '556 Dynamics Lane, City', 'mohit.a@university.edu', '9876543332', 'ME02', 'B.Tech Mechanical Engineering'),
+(23003005, 'Sanya Kapoor', '2005-12-10', '667 Kinematics Avenue, City', 'sanya.k@university.edu', '9876543333', 'ME02', 'B.Tech Mechanical Engineering'),
+(23003006, 'Rohit Mehra', '2006-01-19', '778 Thermal Road, City', 'rohit.m@university.edu', '9876543334', 'ME02', 'B.Tech Mechanical Engineering'),
+(23003009, 'Kunal Patel', '2006-02-28', '25 Sector-62, Noida', 'kunal.patel@example.com', '7373737373', 'ME03', 'B.Tech Mechanical Engineering'),
+(20003011, 'Meena Krishnan', '2002-11-12', '30 T Nagar, Chennai', 'meena.krishnan@example.com', '7878787878', 'ME03', 'B.Tech Mechanical Engineering'),
+(20003012, 'Arun Verma', '2002-09-22', '35 Pitampura, Delhi', 'arun.verma@example.com', '8383838383', 'ME04', 'B.Tech Mechanical Engineering'),
 
 -- Mathematics and Computing Students (40)
 (24117007, 'Aditya Verma', '2006-08-06', 'IIT Roorkee', 'aditya.verma@university.edu', '9876543220', 'MA01', 'BSMS Mathematics and Computing'),
+(24117008, 'Karan Aggarwal', '2006-07-30', 'IIT Roorkee', 'karan.a@university.edu', '9876543316', 'MA01', 'BSMS Mathematics and Computing'),
+(24117009, 'Divya Mathur', '2006-08-05', 'IIT Roorkee', 'divya.m@university.edu', '9876543317', 'MA01', 'BSMS Mathematics and Computing'),
+(24117010, 'Ishika Bhatia', '2006-02-22', 'IIT Roorkee', 'ishika.b@university.edu', '9876543335', 'MA01', 'BSMS Mathematics and Computing'),
+(24117011, 'Praveen Chaudhary', '2006-03-08', 'IIT Roorkee', 'praveen.c@university.edu', '9876543336', 'MA01', 'BSMS Mathematics and Computing'),
+(24117012, 'Shivani Rathore', '2006-04-15', 'IIT Roorkee', 'shivani.r@university.edu', '9876543337', 'MA02', 'BSMS Mathematics and Computing'),
+(24117013, 'Gaurav Malik', '2006-05-23', 'IIT Roorkee', 'gaurav.m@university.edu', '9876543338', 'MA02', 'BSMS Mathematics and Computing'),
+(24117014, 'Isha Nair', '2006-06-17', 'IIT Roorkee', 'isha.n@university.edu', '9876543339', 'MA02', 'BSMS Mathematics and Computing'),
+(18117015, 'Manoj Kumar', '2000-01-20', '21 IIT Delhi', 'manoj.kumar@example.com', '9999999999', 'MA01', 'BSMS Mathematics and Computing'),
+(22117016, 'Sunita Reddy', '2004-11-15', '22 IIT Madras', 'sunita.reddy@example.com', '7070707070', 'MA02', 'BSMS Mathematics and Computing'),
 
 -- Data Science and AI Students (40)
 (23006001, 'Frank Miller', '2005-10-15', '789 Data St, City', 'frank.m@university.edu', '9876543221', 'DS01', 'B.Tech Data Science and AI'),
+(23006002, 'Mohan Reddy', '2005-11-20', '23 Data Street, City', 'mohan.r@university.edu', '9876543308', 'DS01', 'B.Tech Data Science and AI'),
+(23006003, 'Anjali Kapoor', '2005-12-25', '34 Analytics Road, City', 'anjali.k@university.edu', '9876543309', 'DS01', 'B.Tech Data Science and AI'),
+(23006004, 'Vijay Kulkarni', '2006-07-21', '889 Analytics Road, City', 'vijay.k@university.edu', '9876543340', 'DS01', 'B.Tech Data Science and AI'),
+(23006005, 'Shreya Menon', '2006-08-11', '990 Machine Lane, City', 'shreya.m@university.edu', '9876543341', 'DS01', 'B.Tech Data Science and AI'),
+(23006006, 'Nitin Saxena', '2006-09-05', '101 AI Avenue, City', 'nitin.s@university.edu', '9876543342', 'DS02', 'B.Tech Data Science and AI'),
+(23006007, 'Aarti Chopra', '2006-10-14', '212 Deep Learning Road, City', 'aarti.c@university.edu', '9876543343', 'DS02', 'B.Tech Data Science and AI'),
+(23006008, 'Manish Goyal', '2006-11-22', '323 Neural Network Street, City', 'manish.g@university.edu', '9876543344', 'DS02', 'B.Tech Data Science and AI'),
+(19006009, 'Deepak Yadav', '2001-07-04', '17 MG Road, Bangalore', 'deepak.yadav@example.com', '9595959595', 'DS01', 'B.Tech Data Science and AI'),
+(22006010, 'Shweta Joshi', '2004-05-12', '18 Bannerghatta Road, Bangalore', 'shweta.joshi@example.com', '9696969696', 'DS02', 'B.Tech Data Science and AI'),
+(23006011, 'Neha Singh', '2006-04-05', '26 Greater Noida', 'neha.singh@example.com', '7474747474', 'DS03', 'B.Tech Data Science and AI'),
+(19006012, 'Naveen Reddy', '2001-05-18', '31 Gachibowli, Hyderabad', 'naveen.reddy@example.com', '7979797979', 'DS03', 'B.Tech Data Science and AI'),
+(21006013, 'Divya Patel', '2003-12-08', '36 Vashi, Navi Mumbai', 'divya.patel@example.com', '8484848484', 'DS04', 'B.Tech Data Science and AI'),
 
 -- Electronics and Communication Students (40)
 (23007001, 'Grace Lee', '2005-11-20', '321 ECE St, City', 'grace.l@university.edu', '9876543222', 'EC01', 'B.Tech Electronics and Communication'),
+(23007002, 'Nikhil Sood', '2006-09-10', '12 Circuit Road, City', 'nikhil.s@university.edu', '9876543318', 'EC01', 'B.Tech Electronics and Communication'),
+(23007003, 'Tanvi Khanna', '2006-10-15', '23 Signal Lane, City', 'tanvi.k@university.edu', '9876543319', 'EC01', 'B.Tech Electronics and Communication'),
+(23007004, 'Preeti Rawat', '2006-12-13', '434 Signal Road, City', 'preeti.r@university.edu', '9876543345', 'EC01', 'B.Tech Electronics and Communication'),
+(23007005, 'Aman Srivastava', '2007-01-09', '545 Communication Lane, City', 'aman.s@university.edu', '9876543346', 'EC01', 'B.Tech Electronics and Communication'),
+(23007006, 'Sneha Rao', '2007-02-18', '656 Network Avenue, City', 'sneha.r@university.edu', '9876543347', 'EC02', 'B.Tech Electronics and Communication'),
+(23007007, 'Varun Chauhan', '2007-03-27', '767 Microwave Road, City', 'varun.c@university.edu', '9876543348', 'EC02', 'B.Tech Electronics and Communication'),
+(23007008, 'Juhi Sharma', '2007-04-15', '878 Circuit Lane, City', 'juhi.s@university.edu', '9876543349', 'EC02', 'B.Tech Electronics and Communication'),
+(20007009, 'Gaurav Sharma', '2002-09-18', '19 Sector-17, Gurgaon', 'gaurav.sharma@example.com', '9797979797', 'EC01', 'B.Tech Electronics and Communication'),
+(21007010, 'Kavita Verma', '2003-03-06', '20 DLF Phase-2, Gurgaon', 'kavita.verma@example.com', '9898989898', 'EC02', 'B.Tech Electronics and Communication'),
+(23007011, 'Rohit Gupta', '2006-06-10', '27 Yamuna Expressway, Noida', 'rohit.gupta@example.com', '7575757575', 'EC03', 'B.Tech Electronics and Communication'),
+(22007013, 'Deepthi Nair', '2004-01-24', '32 Marine Drive, Mumbai', 'deepthi.nair@example.com', '8080808080', 'EC03', 'B.Tech Electronics and Communication'),
+(20007014, 'Saurabh Singh', '2002-04-03', '37 Salt Lake, Kolkata', 'saurabh.singh@example.com', '8585858585', 'EC04', 'B.Tech Electronics and Communication'),
 
--- Metallurgical Engineering Students (40)
-(23008001, 'Henry Chen', '2005-12-25', '654 Meta St, City', 'henry.c@university.edu', '9876543223', 'MT01', 'B.Tech Metallurgical Engineering'),
+-- Physics Students
+(23011001, 'Rajesh Kumar', '2005-03-12', '34 Science Lane, City', 'rajesh.k@university.edu', '9876543300', 'PH01', 'B.Sc Physics'),
+(23011002, 'Priya Sharma', '2005-04-15', '45 Newton Road, City', 'priya.s@university.edu', '9876543301', 'PH01', 'B.Sc Physics'),
 
--- Engineering Physics Students (40)
-(23009001, 'Ivy Wilson', '2006-01-30', '987 Physics St, City', 'ivy.w@university.edu', '9876543224', 'EP01', 'B.Tech Engineering Physics'),
+-- Chemistry Students
+(23012001, 'Sameer Patel', '2005-05-20', '56 Mendeleev St, City', 'sameer.p@university.edu', '9876543302', 'CH01', 'B.Sc Chemistry'),
+(23012002, 'Neha Gupta', '2005-06-25', '67 Element Road, City', 'neha.g@university.edu', '9876543303', 'CH01', 'B.Sc Chemistry'),
 
--- Chemical Engineering Students (40)
-(23010001, 'Jack Garcia', '2006-02-05', '123 Chem St, City', 'jack.g@university.edu', '9876543225', 'CH01', 'B.Tech Chemical Engineering');
+-- Biology Students
+(23013001, 'Amit Singh', '2005-07-30', '78 Darwin Lane, City', 'amit.s@university.edu', '9876543304', 'BI01', 'B.Sc Biology'),
+(23013002, 'Kavita Rao', '2005-08-05', '89 Cell Street, City', 'kavita.r@university.edu', '9876543305', 'BI01', 'B.Sc Biology'),
+
+-- Robotics Students
+(23021001, 'Vikram Malhotra', '2006-01-01', '45 Robot Lane, City', 'vikram.m@university.edu', '9876543310', 'RB01', 'B.Tech Robotics'),
+(23021002, 'Deepika Joshi', '2006-02-05', '56 Automation St, City', 'deepika.j@university.edu', '9876543311', 'RB01', 'B.Tech Robotics'),
+
+-- Business Administration Students
+(23026001, 'Rahul Mehta', '2006-03-10', '67 Business Blvd, City', 'rahul.m@university.edu', '9876543312', 'BA01', 'BBA Business Administration'),
+(23026002, 'Sneha Mishra', '2006-04-15', '78 Commerce Lane, City', 'sneha.m@university.edu', '9876543313', 'BA01', 'BBA Business Administration'),
+
+-- English Literature Students
+(23016001, 'Aarav Bhatia', '2006-05-20', '89 Literature Road, City', 'aarav.b@university.edu', '9876543314', 'EN01', 'BA English Literature'),
+(23016002, 'Ishita Choudhary', '2006-06-25', '90 Poetry Lane, City', 'ishita.c@university.edu', '9876543315', 'EN01', 'BA English Literature');
 
 -- Insert data into Enrolled table
 -- enrollment_date: Semester format (e.g., 'Spring 2024', 'Autumn 2023')
@@ -248,17 +325,54 @@ INSERT INTO Enrolled (enrollment_number, course_id, enrollment_date, status) VAL
 (24117007, 'MAC102', 'Spring 2024', 'ongoing'),
 (24117007, 'MAC106', 'Spring 2024', 'ongoing'),
 (24117007, 'HSS101', 'Spring 2024', 'ongoing'),
-(24117007, 'HSS102', 'Spring 2024', 'ongoing');
+(24117007, 'HSS102', 'Spring 2024', 'ongoing'),
+
+-- Data Science and AI Students (2023 batch)
+(23006001, 'DSAI101', '2023-08-02 10:00:00'),
+(23006001, 'DSAI102', '2023-08-04 10:00:00'),
+(23006001, 'DSAI201', '2023-08-09 10:00:00'),
+(23006001, 'DSAI202', '2023-08-01 13:00:00'),
+(23006001, 'HSS101', '2023-08-01 14:00:00'),
+(23006001, 'HSS101', '2023-08-03 14:00:00'),
+
+-- Electronics and Communication Students (2023 batch)
+(23007001, 'ECE101', '2023-08-01 11:00:00'),
+(23007001, 'ECE201', '2023-08-03 11:00:00'),
+(23007001, 'ECE202', '2023-08-08 11:00:00'),
+(23007001, 'HSS102', '2023-08-02 15:00:00'),
+(23007001, 'HSS102', '2023-08-04 15:00:00'),
+
+-- Metallurgical Engineering Students (2023 batch)
+(23008001, 'META101', '2023-08-02 09:00:00'),
+(23008001, 'META201', '2023-08-04 09:00:00'),
+(23008001, 'HSS101', '2023-08-01 14:00:00'),
+(23008001, 'HSS101', '2023-08-03 14:00:00'),
+
+-- Engineering Physics Students (2023 batch)
+(23009001, 'EPH101', '2023-08-01 10:00:00'),
+(23009001, 'EPH201', '2023-08-03 10:00:00'),
+(23009001, 'EPH202', '2023-08-08 10:00:00'),
+(23009001, 'HSS102', '2023-08-02 14:00:00'),
+(23009001, 'HSS102', '2023-08-04 14:00:00'),
+
+-- Chemical Engineering Students (2023 batch)
+(23010001, 'CHE101', '2023-08-02 09:00:00'),
+(23010001, 'CHE201', '2023-08-04 09:00:00'),
+(23010001, 'CHE202', '2023-08-09 09:00:00'),
+(23010001, 'HSS101', '2023-08-01 14:00:00'),
+(23010001, 'HSS101', '2023-08-03 14:00:00'),
+
+-- Common Courses
+('INS2023001', 'HSS101'),
+('INS2023002', 'HSS102');
 
 -- Insert data into Attendance table
 INSERT INTO Attendance (enrollment_number, course_id, date_time) VALUES
 -- Computer Science Students (2023 batch)
 (23001001, 'CS101', '2023-08-01 09:00:00'),
 (23001001, 'CS101', '2023-08-03 09:00:00'),
-(23001001, 'CS101', '2023-08-08 09:00:00'),
 (23001001, 'CS102', '2023-08-02 11:00:00'),
 (23001001, 'CS102', '2023-08-04 11:00:00'),
-(23001001, 'CS102', '2023-08-09 11:00:00'),
 (23001001, 'HSS101', '2023-08-01 14:00:00'),
 (23001001, 'HSS101', '2023-08-03 14:00:00'),
 
@@ -309,48 +423,42 @@ INSERT INTO Attendance (enrollment_number, course_id, date_time) VALUES
 
 -- Data Science and AI Students (2023 batch)
 (23006001, 'DSAI101', '2023-08-02 10:00:00'),
-(23006001, 'DSAI101', '2023-08-04 10:00:00'),
-(23006001, 'DSAI101', '2023-08-09 10:00:00'),
-(23006001, 'DSAI102', '2023-08-01 13:00:00'),
-(23006001, 'DSAI102', '2023-08-03 13:00:00'),
+(23006001, 'DSAI102', '2023-08-04 10:00:00'),
+(23006001, 'DSAI201', '2023-08-09 10:00:00'),
+(23006001, 'DSAI202', '2023-08-01 13:00:00'),
 (23006001, 'HSS101', '2023-08-01 14:00:00'),
 (23006001, 'HSS101', '2023-08-03 14:00:00'),
 
 -- Electronics and Communication Students (2023 batch)
 (23007001, 'ECE101', '2023-08-01 11:00:00'),
-(23007001, 'ECE101', '2023-08-03 11:00:00'),
-(23007001, 'ECE101', '2023-08-08 11:00:00'),
-(23007001, 'ECE201', '2023-08-02 14:00:00'),
-(23007001, 'ECE201', '2023-08-04 14:00:00'),
+(23007001, 'ECE201', '2023-08-03 11:00:00'),
+(23007001, 'ECE202', '2023-08-08 11:00:00'),
 (23007001, 'HSS102', '2023-08-02 15:00:00'),
 (23007001, 'HSS102', '2023-08-04 15:00:00'),
 
 -- Metallurgical Engineering Students (2023 batch)
 (23008001, 'META101', '2023-08-02 09:00:00'),
-(23008001, 'META101', '2023-08-04 09:00:00'),
-(23008001, 'META101', '2023-08-09 09:00:00'),
-(23008001, 'META201', '2023-08-01 11:00:00'),
-(23008001, 'META201', '2023-08-03 11:00:00'),
+(23008001, 'META201', '2023-08-04 09:00:00'),
 (23008001, 'HSS101', '2023-08-01 14:00:00'),
 (23008001, 'HSS101', '2023-08-03 14:00:00'),
 
 -- Engineering Physics Students (2023 batch)
 (23009001, 'EPH101', '2023-08-01 10:00:00'),
-(23009001, 'EPH101', '2023-08-03 10:00:00'),
-(23009001, 'EPH101', '2023-08-08 10:00:00'),
-(23009001, 'EPH201', '2023-08-02 13:00:00'),
-(23009001, 'EPH201', '2023-08-04 13:00:00'),
+(23009001, 'EPH201', '2023-08-03 10:00:00'),
+(23009001, 'EPH202', '2023-08-08 10:00:00'),
 (23009001, 'HSS102', '2023-08-02 14:00:00'),
 (23009001, 'HSS102', '2023-08-04 14:00:00'),
 
 -- Chemical Engineering Students (2023 batch)
 (23010001, 'CHE101', '2023-08-02 09:00:00'),
-(23010001, 'CHE101', '2023-08-04 09:00:00'),
-(23010001, 'CHE101', '2023-08-09 09:00:00'),
-(23010001, 'CHE201', '2023-08-01 11:00:00'),
-(23010001, 'CHE201', '2023-08-03 11:00:00'),
+(23010001, 'CHE201', '2023-08-04 09:00:00'),
+(23010001, 'CHE202', '2023-08-09 09:00:00'),
 (23010001, 'HSS101', '2023-08-01 14:00:00'),
-(23010001, 'HSS101', '2023-08-03 14:00:00');
+(23010001, 'HSS101', '2023-08-03 14:00:00'),
+
+-- Common Courses
+('INS2023001', 'HSS101'),
+('INS2023002', 'HSS102');
 
 -- Insert data into Grade table
 -- grade: Integer value from 4 to 10
@@ -510,14 +618,6 @@ INSERT INTO Student (enrollment_number, name, dob, address, email, mobile, sub_b
 (23013001, 'Amit Singh', '2005-07-30', '78 Darwin Lane, City', 'amit.s@university.edu', '9876543304', 'BI01', 'B.Sc Biology'),
 (23013002, 'Kavita Rao', '2005-08-05', '89 Cell Street, City', 'kavita.r@university.edu', '9876543305', 'BI01', 'B.Sc Biology'),
 
--- Computer Science Students
-(23001003, 'Ravi Teja', '2005-09-10', '90 Algorithm Road, City', 'ravi.t@university.edu', '9876543306', 'CS01', 'B.Tech Computer Science and Engineering'),
-(23001004, 'Sunita Verma', '2005-10-15', '12 Coding Lane, City', 'sunita.v@university.edu', '9876543307', 'CS01', 'B.Tech Computer Science and Engineering'),
-
--- Data Science Students
-(23006002, 'Mohan Reddy', '2005-11-20', '23 Data Street, City', 'mohan.r@university.edu', '9876543308', 'DS01', 'B.Tech Data Science and AI'),
-(23006003, 'Anjali Kapoor', '2005-12-25', '34 Analytics Road, City', 'anjali.k@university.edu', '9876543309', 'DS01', 'B.Tech Data Science and AI'),
-
 -- Robotics Students
 (23021001, 'Vikram Malhotra', '2006-01-01', '45 Robot Lane, City', 'vikram.m@university.edu', '9876543310', 'RB01', 'B.Tech Robotics'),
 (23021002, 'Deepika Joshi', '2006-02-05', '56 Automation St, City', 'deepika.j@university.edu', '9876543311', 'RB01', 'B.Tech Robotics'),
@@ -528,15 +628,7 @@ INSERT INTO Student (enrollment_number, name, dob, address, email, mobile, sub_b
 
 -- English Literature Students
 (23016001, 'Aarav Bhatia', '2006-05-20', '89 Literature Road, City', 'aarav.b@university.edu', '9876543314', 'EN01', 'BA English Literature'),
-(23016002, 'Ishita Choudhary', '2006-06-25', '90 Poetry Lane, City', 'ishita.c@university.edu', '9876543315', 'EN01', 'BA English Literature'),
-
--- Additional Mathematics Students
-(24117008, 'Karan Aggarwal', '2006-07-30', 'IIT Roorkee', 'karan.a@university.edu', '9876543316', 'MA01', 'BSMS Mathematics and Computing'),
-(24117009, 'Divya Mathur', '2006-08-05', 'IIT Roorkee', 'divya.m@university.edu', '9876543317', 'MA01', 'BSMS Mathematics and Computing'),
-
--- Additional Electronics Students
-(23007002, 'Nikhil Sood', '2006-09-10', '12 Circuit Road, City', 'nikhil.s@university.edu', '9876543318', 'EC01', 'B.Tech Electronics and Communication'),
-(23007003, 'Tanvi Khanna', '2006-10-15', '23 Signal Lane, City', 'tanvi.k@university.edu', '9876543319', 'EC01', 'B.Tech Electronics and Communication');
+(23016002, 'Ishita Choudhary', '2006-06-25', '90 Poetry Lane, City', 'ishita.c@university.edu', '9876543315', 'EN01', 'BA English Literature');
 
 -- Insert data into Enrolled table for the new students (including diverse statuses)
 INSERT INTO Enrolled (enrollment_number, course_id, enrollment_date, status) VALUES

@@ -1,4 +1,4 @@
-use student_db2;
+use student_db3;
 
 -- Create the DEPARTMENT table first (no foreign key dependencies)
 -- dept_id: 3-digit department code (e.g., '001' for Computer Science)
